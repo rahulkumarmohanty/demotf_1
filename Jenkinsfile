@@ -11,7 +11,7 @@ pipeline {
         stage('Terraform apply') {
             steps {
                 sh 'terraform init'
-                sh 'terraform apply myplan.tfplan --auto-approve'
+                sh 'terraform apply -auto-approve myplan.tfplan'
             }
         }
     }
