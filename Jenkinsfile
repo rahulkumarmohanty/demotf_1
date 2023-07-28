@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'az login --service-principal --username ${ARM_CLIENT_ID} --password ${ARM_CLIENT_SECRET} --tenant ${ARM_TENANT_ID}'
                 sh 'az account set --subscription ${ARM_SUBSCRIPTION_ID}'
-                sh 'terraform init --backend-config=backend-conffinal.tfvars --reconfigure'
+                sh 'terraform init --backend-config=backend-conffinal.tfvars --auto-approve'
                 sh 'terraform apply -auto-approve myplan.tfplan'
             }
         }
