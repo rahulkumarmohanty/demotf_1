@@ -29,6 +29,7 @@ pipeline {
                 Build URL: ${env.BUILD_URL}
               """
               slackSend(channel: channel, message: slackMessage, color: buildStatus == 'SUCCESS' ? 'good' : 'danger', tokenCredentialId: slackCredentialId)
+              cleanWs()
             }
           }
         }
