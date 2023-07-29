@@ -3,6 +3,13 @@ pipeline {
     environment {
         INFRACOST_API_KEY = "ico-v188MHnFUuLsKsSNOYLXfIhnL7ANIkaw"
     }
+
+    parameters{
+        string(name: 'ARM_TENANT_ID', description: 'Enter the tenant id')
+        string(name: 'ARM_CLIENT_ID', description: 'Enter the client id')
+        string(name: 'ARM_CLIENT_SECRET', description: 'Enter the client secret')
+        string(name: 'ARM_SUBSCRIPTION_ID',description: 'Enter the subscription id')
+    }
     stages {
         stage('copying artifacts') {
             steps {
