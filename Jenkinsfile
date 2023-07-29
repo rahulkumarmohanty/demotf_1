@@ -3,9 +3,6 @@ pipeline {
     environment {
         INFRACOST_API_KEY = "ico-v188MHnFUuLsKsSNOYLXfIhnL7ANIkaw"
     }
-    parameters {
-        choice choices: ['2ed1a4b1-8d67-48fb-8ef6-0d8fa4ab6a5d'], description: 'Choose any of the subscription id..', name: 'ARM_SUBSCRIPTION_ID'
-    }
     stages {
         stage('copying artifacts') {
             steps {
